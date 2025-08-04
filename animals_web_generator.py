@@ -1,11 +1,6 @@
 import json
 import data_fetcher
 
-def load_data(file_path):
-  """ Loads a JSON file """
-  with open(file_path, "r") as handle:
-    return json.load(handle)
-
 
 def serialize_animal(animal_obj):
     """ Serializes the animal object data and produces a HTML string as output """
@@ -31,7 +26,6 @@ def main():
 
     animal_name = input("Please enter an animal: ")
     animals_data = json.loads(data_fetcher.fetch_data(animal_name))
-    # animals_data = load_data('animals_data.json')
 
     output = ''
     for animal_obj in animals_data:
